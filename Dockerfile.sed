@@ -5,7 +5,8 @@ COPY scripts/adduser.sh /tmp/adduser.sh
 RUN mkdir -p /etc/salt/ && mkdir -p /srv/salt/base && \
     apt-get update && \
     apt-get install -y  apt-utils vim emacs-nox curl sudo bash tcsh zsh gnupg2 \
-                        openssh-client openssh-server tmux git python3 salt-common salt-master salt-minion python-apt && \
+                        openssh-client openssh-server tmux git python3 salt-common salt-master salt-minion python-apt \
+                        gcc g++ make ruby2.3 ruby2.3-dev && \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get autoremove && \
