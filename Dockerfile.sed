@@ -12,6 +12,7 @@ RUN mkdir -p /etc/salt/ && mkdir -p /srv/salt/base && \
     apt-get autoremove && \
     DOCKER_USER=DOCKER_USER DOCKER_UID=DOCKER_UID DOCKER_GID=DOCKER_GID DOCKER_FULLNAME=DOCKER_USER /tmp/adduser.sh && \
     rm /tmp/adduser.sh && \
+    gem install -q fpm && \
     echo '%sudo ALL=(ALL) NOPASSWD: ALL' | cat > /etc/sudoers.d/sudo
 
 COPY resources/etc/salt/minion /etc/salt/minion
