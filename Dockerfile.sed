@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:rolling
 
 COPY scripts/adduser.sh /tmp/adduser.sh
 
