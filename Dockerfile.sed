@@ -1,12 +1,12 @@
-# FROM ubuntu:latest
-FROM ubuntu:devel
+FROM ubuntu:bionic
+# FROM ubuntu:devel
 
 COPY scripts/adduser.sh /tmp/adduser.sh
 
 RUN mkdir -p /etc/salt/ && mkdir -p /srv/salt/base && \
     apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y  apt-utils vim emacs-nox emacs-goodies-el curl sudo bash fish zsh gnupg2 \
-                        openssh-client openssh-server tmux git python3 salt-common salt-master salt-minion python-apt \
+                        openssh-client openssh-server tmux git python3 salt-common salt-master salt-minion \
                         gcc g++ make python3-pip python3-venv python3-virtualenv ruby ruby-dev \
                         golang htop jq mtr git && \
     apt-get update && \
