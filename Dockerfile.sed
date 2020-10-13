@@ -8,10 +8,10 @@ RUN mkdir -p /etc/salt/ && mkdir -p /srv/salt/base && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y  apt-utils vim emacs-nox emacs-goodies-el curl sudo bash fish zsh gnupg2 \
                         openssh-client openssh-server tmux git python3 salt-common salt-master salt-minion \
                         gcc g++ make python3-pip python3-venv python3-virtualenv ruby ruby-dev \
-                        golang htop jq mtr git && \
+                        golang htop jq mtr git apt-file && \
     apt-get update && \
     apt-get upgrade -y && \
-    apt-get autoremove && \
+    apt-get autoremove -y && \
     DOCKER_USER=DOCKER_USER DOCKER_UID=DOCKER_UID DOCKER_GID=DOCKER_GID DOCKER_FULLNAME=DOCKER_USER /tmp/adduser.sh && \
     rm /tmp/adduser.sh && \
     gem install -q fpm && \
